@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MarkerInfoService } from './marker-info.service';
 
 @Component({
   selector: 'app-plain-map',
@@ -8,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class PlainMapComponent implements OnInit {
   lat: number = 51.678418;
   lng: number = 7.809007;
-  markertext: string = 'James wuz here';
+  markertext: string = this.markerinfoService.getData();
 
-  constructor() { }
+  constructor(private markerinfoService: MarkerInfoService) { }
 
   ngOnInit() {
   }
