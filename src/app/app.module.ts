@@ -9,6 +9,8 @@ import { PlainMapComponent } from './plain-map/plain-map.component';
 import { DeforestationMapComponent } from './deforestation-map/deforestation-map.component';
 import { RainfallMapComponent } from './rainfall-map/rainfall-map.component';
 
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,10 @@ import { RainfallMapComponent } from './rainfall-map/rainfall-map.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB4CY_D2ih25haOs7HiSj_i6vVBtIUQf_Y'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
