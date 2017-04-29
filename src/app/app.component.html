@@ -2,32 +2,9 @@
 
 <div class="mainContainer">
 
-	<!--search bar-->
-	<div class="container">
-		<div class="col-lg-6">
-	    <div class="input-group">
-	      <input type="text" class="form-control" placeholder="Search for location...">
-	      <span class="input-group-btn">
-	        <button class="btn btn-default" type="button">Go!</button>
-	      </span>
-	    </div>
-	  </div>
-	 </div>
+	<app-search> </app-search>
 
-	 <!--filters-->
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	    <h3 class="panel-title">Filters</h3>
-	  </div>
-	  <div *ngFor="let animal of animals">
-		  <div class="col-lg-6">
-		    <div class="input-group">
-		      <input type="checkbox" aria-label="...">
-		      {{animal.name}}
-		    </div>
-		  </div>
-	  </div>
-	</div>
+	<app-filters [animals]="animals"> </app-filters>
 
 	<app-plain-map> </app-plain-map>
 
