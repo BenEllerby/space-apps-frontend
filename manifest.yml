@@ -1,8 +1,8 @@
 applications:
 - path: .
-  command: "ng serve"
   memory: 512M
   instances: 1
+  command: node server.js 
   domain: eu-gb.mybluemix.net
   name: spaces-apps-frontend
   host: spaces-apps-frontend
