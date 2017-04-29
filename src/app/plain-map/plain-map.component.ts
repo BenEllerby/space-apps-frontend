@@ -7,6 +7,7 @@ import { MarkerInfoService } from './marker-info.service';
   styleUrls: ['./plain-map.component.css']
 })
 export class PlainMapComponent implements OnInit {
+
   mockResponse = JSON.parse(this.markerinfoService.getData());
   lat: number = this.mockResponse.markers[1].lat;
   lng: number = this.mockResponse.markers[1].lng;
