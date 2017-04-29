@@ -6,7 +6,7 @@
     <sebm-google-map [latitude]="lat" [longitude]="lng">
       <sebm-google-map-marker *ngFor="let item of mockResponse.markers; let i = index" [latitude]="item.lat" [longitude]="item.lng">
         <sebm-google-map-info-window [disableAutoPan]="true">
-          <img [src]="markertext">
+          <img [src]="item.markerPicURL">
         </sebm-google-map-info-window>
       </sebm-google-map-marker>
     </sebm-google-map>
