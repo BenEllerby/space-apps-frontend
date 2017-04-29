@@ -7,9 +7,10 @@ import { MarkerInfoService } from './marker-info.service';
   styleUrls: ['./plain-map.component.css']
 })
 export class PlainMapComponent implements OnInit {
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-  markertext: string = this.markerinfoService.getData();
+  mockResponse = JSON.parse(this.markerinfoService.getData());
+  lat: number = this.mockResponse.markers[1].lat;
+  lng: number = this.mockResponse.markers[1].lng;
+  markertext = this.mockResponse.markers[1].markerPicURL;
 
   constructor(private markerinfoService: MarkerInfoService) { }
 
