@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PlainMapComponent implements OnInit {
   lat: number = 51.678418;
   lng: number = 7.809007;
+  markertext: string = 'James wuz here';
 
   constructor() { }
 
