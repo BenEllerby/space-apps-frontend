@@ -12,18 +12,18 @@ export class MarkerInfoService {
   };
 
   getData(){
-    this.apiUrl = "https://space-apps-backend.eu-gb.mybluemix.net/api/markerinfo";
+    this.apiUrl = "https://space-apps-backend.eu-gb.mybluemix.net/api/sightings";
 
     let headers = new Headers({'Content-Type': 'text/plain; charset=utf8',
                                     'Accept': 'text/plain'});
     // let params: URLSearchParams = new URLSearchParams();
     let options = new RequestOptions({headers: headers});
-    /*
+    
     return this.http.get(this.apiUrl, options)
             .toPromise()
             .catch(this.handleError);    
-    */
     
+    /*
     let latOne = 51.678418;
     let lngOne = 7.809007;
     let imgFileOne = "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p206x206/10848050_737672746307094_697615436590075052_n.jpg?oh=7fe578fd3978a304c54bb963bbeb1ed6&oe=598DDE0D";
@@ -36,10 +36,10 @@ export class MarkerInfoService {
       { "lat": latOne, "lng": lngOne, "markerPicURL": imgFileOne },
       { "lat": latTwo, "lng": lngTwo, "markerPicURL": imgFileTwo }
     ]};
-    
-    let jsonObj = JSON.stringify(myObj);
 
-    return jsonObj;
+    let jsonObj = JSON.stringify(myObj);
+    
+    return jsonObj;*/
 }
 
   handleError(error: any): Promise<any> {
