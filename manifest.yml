@@ -1,0 +1,10 @@
+applications:
+- path: .
+  command: "ng serve"
+  memory: 512M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: spaces-apps-frontend
+  host: spaces-apps-frontend
+  disk_quota: 1024M
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
