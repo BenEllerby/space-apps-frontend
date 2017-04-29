@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  @Output() showOtherGraphs = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clickedOnce() {
+  	this.showOtherGraphs.emit();
   }
 
 }

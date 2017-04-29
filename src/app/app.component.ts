@@ -7,6 +7,10 @@ import { Component, Output } from '@angular/core';
 })
 export class AppComponent {
 
-  @Output()
-  animals = [{name: 'grey squirrel'}, {name: 'fox'}];
+  @Output() animals = [{name: 'grey squirrel'}, {name: 'fox'}];
+
+  handleSearchEvent(event) {
+  	// call service
+  	console.log('kjdsfsd')
+  }
 }
