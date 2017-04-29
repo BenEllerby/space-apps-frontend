@@ -8,6 +8,8 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { PlainMapComponent } from './plain-map/plain-map.component';
 import { DeforestationMapComponent } from './deforestation-map/deforestation-map.component';
 import { RainfallMapComponent } from './rainfall-map/rainfall-map.component';
+import { FiltersComponent } from './filters/filters.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { RainfallMapComponent } from './rainfall-map/rainfall-map.component';
     JumbotronComponent,
     PlainMapComponent,
     DeforestationMapComponent,
-    RainfallMapComponent
+    RainfallMapComponent,
+    FiltersComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
