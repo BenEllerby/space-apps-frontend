@@ -19,6 +19,14 @@ export class AppComponent {
   constructor(private googleMapsService: GoogleMapsService, private markerinfoService: MarkerInfoService){};
 
   ngOnInit() {
+  	if(window.location.href.includes('?')) {
+  		let queryStrings = window.location.href.split('?')[1];
+	  	let latArg = queryStrings.split('&')[0].split('=')[1];
+	  	let longArg = queryStrings.split('&')[1].split('=')[1];
+	  	this.lat = parseInt(latArg);
+	  	this.lng = parseInt(longArg);
+  	}
+  	
     let mockResponse = this.markerinfoService.getData();
     let resolvedData = Promise.resolve(mockResponse);
     resolvedData.then((data: any) => {
