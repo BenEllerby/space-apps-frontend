@@ -1,3 +1,21 @@
 .sebm-google-map-container {
     height: 400px;
 }
+
+
+.panel-heading{
+    background-color:#202020;
+    background-image: none;
+     border:none;
+}
+.panel-title{
+    color:#F0F0F0;
+}
+
+.panel-body{
+      background-color:#F0F0F0;
+}
+
+.panel{
+ border:none;
+}

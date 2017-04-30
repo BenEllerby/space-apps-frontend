@@ -1,3 +1,9 @@
 .searchContainer {
 	padding-bottom: 20px;
+	
+}
+
+.form-control{
+	background-color:#202020;
+	border:none;
 }
