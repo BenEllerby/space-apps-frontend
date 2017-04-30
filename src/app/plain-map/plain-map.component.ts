@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MarkerInfoService } from './marker-info.service';
 import { GoogleMapsService } from '../google-maps.service';
 
@@ -10,8 +10,9 @@ import { GoogleMapsService } from '../google-maps.service';
 
 export class PlainMapComponent implements OnInit {
   jsonData: any;
-  lat: number = 53.6693533;
-  lng: number = -1.3089677;
+  @Input() lat: number;
+  @Input() lng: number;
+  //@Input() location;
 
   constructor(private markerinfoService: MarkerInfoService, private googlemapsService: GoogleMapsService) { }
 
@@ -23,5 +24,7 @@ export class PlainMapComponent implements OnInit {
     });
   }
 
-  locationSearch() {}
+  locationSearch() {
+
+  }
 }

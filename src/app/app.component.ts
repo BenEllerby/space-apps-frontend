@@ -9,7 +9,9 @@ import { GoogleMapsService } from './google-maps.service';
 export class AppComponent {
 
   @Output() animals = [{name: 'grey squirrel'}, {name: 'fox'}];
-
+  //@Output() location = {lat: 53.6693533, lng: -1.3089677}
+  @Output() lat = 53.6693533;
+  @Output() lng = -1.3089677;
   constructor(private googleMapsService: GoogleMapsService){};
 
   handleSearchEvent(event) {
@@ -20,7 +22,8 @@ export class AppComponent {
     location.then((data: any) => {
         console.log("Outputting location data");
         console.log(data);
-
+        this.lat = data.lat;
+        this.lng = data.lng;
         // How to get this into plain-map.component?
     });
   }
