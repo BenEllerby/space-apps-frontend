@@ -13,8 +13,8 @@ export class MarkerInfoService {
     //this.apiUrl = "https://space-apps-backend.eu-gb.mybluemix.net/api/sightings";
     this.apiUrl = "https://test-blarg.eu-gb.mybluemix.net/api/sightings";
     let headers = new Headers({'Content-Type': 'text/plain; charset=utf8',
-                                    'Accept': 'text/plain'});
-    // let params: URLSearchParams = new URLSearchParams();
+                                    'Accept': 'text/plain'})
+
     let options = new RequestOptions({headers: headers});
     
     return this.http.get(this.apiUrl, options)

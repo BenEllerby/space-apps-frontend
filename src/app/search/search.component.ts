@@ -15,7 +15,8 @@ export class SearchComponent implements OnInit {
   }
 
   clickedOnce() {
-  	this.showOtherGraphs.emit();
+    let address = (<HTMLInputElement>document.getElementById("addressinput")).value;
+    this.showOtherGraphs.emit(address);
   }
 
 }
