@@ -16,7 +16,21 @@ color: #FFF;
 .container{
     background-color: #101010;
         -webkit-filter: brightness(80%);
-        opacity:0.8;
-    
-    
+        opacity:0.8;  
+}
+
+.logo{
+    width:60px;
+}
+.header{
+    background-color:#202020;
+    text-align: center;
+}
+
+.name{
+    color:#F0F0F0;
+    padding-bottom:10px;
+    font-size:16px;
+    font-family:Helvetica;
+    padding:10px;
 }
