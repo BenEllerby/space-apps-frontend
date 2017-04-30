@@ -7,14 +7,17 @@ import { MarkerInfoService } from './marker-info.service';
   styleUrls: ['./plain-map.component.css']
 })
 export class PlainMapComponent implements OnInit {
-
-  mockResponse = JSON.parse(this.markerinfoService.getData());
-  lat: number = this.mockResponse.markers[1].lat;
-  lng: number = this.mockResponse.markers[1].lng;
+  jsonData: any;
 
   constructor(private markerinfoService: MarkerInfoService) { }
 
   ngOnInit() {
-    console.log(this.mockResponse.markers);
+    let mockResponse = this.markerinfoService.getData();
+    let resolvedData = Promise.resolve(mockResponse);
+    resolvedData.then((data: any) => {
+      console.log(data);
+      this.jsonData = JSON.parse(data._body);
+      console.log(this.jsonData);      
+    });
   }
 }
