@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -7,14 +7,25 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FiltersComponent implements OnInit {
 
-  @Input()
-  animals;
+  @Input() animals;
+  @Output() graphFilter = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  checkedChange(name: string) {
+    console.log("Hit checkedChange");
+    let temp = (<HTMLInputElement>document.getElementById(name)).checked;
+    if (temp)
+    {
+      this.graphFilter.emit(name);
+    }
+    else
+    {
+      this.graphFilter.emit("all");
+    }
+  }
 }
 
 export class Animals {
