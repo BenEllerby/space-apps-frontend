@@ -4,9 +4,9 @@
   </div>
   <div class="panel-body">
     <sebm-google-map [latitude]="lat" [longitude]="lng">
-      <sebm-google-map-marker [latitude]="lat" [longitude]="lng">
+      <sebm-google-map-marker *ngFor="let item of jsonData; let i = index" [latitude]="item.latitude" [longitude]="item.longitude">
         <sebm-google-map-info-window [disableAutoPan]="true">
-          <img [src]="markertext">
+          Noodlez and Jamez<!--<img [src]="item.markerPicURL">-->
         </sebm-google-map-info-window>
       </sebm-google-map-marker>
     </sebm-google-map>
