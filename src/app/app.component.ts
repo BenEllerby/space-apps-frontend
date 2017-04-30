@@ -10,8 +10,8 @@ import { GoogleMapsService } from './google-maps.service';
 export class AppComponent {
 
   @Output() animals = [];
-  @Output() lat = 53.6693533;
-  @Output() lng = -1.3089677;
+  @Output() lat = 53.1934;
+  @Output() lng = -2.8931;
   @Output() jsonData;
   allData: any;
   selected: string[] = [];

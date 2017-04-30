@@ -3,7 +3,7 @@
     <h3 class="panel-title">Map</h3>
   </div>
   <div class="panel-body">
-    <sebm-google-map [latitude]="lat" [longitude]="lng">
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]=10>
       <sebm-google-map-marker *ngFor="let item of jsonData; let i = index" [latitude]="item.latitude" [longitude]="item.longitude">
         <sebm-google-map-info-window [disableAutoPan]="true">
           Placeholder - will contain images<!--<img [src]="item.markerPicURL">-->
