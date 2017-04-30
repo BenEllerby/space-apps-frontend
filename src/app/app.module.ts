@@ -12,6 +12,7 @@ import { FiltersComponent } from './filters/filters.component';
 import { SearchComponent } from './search/search.component';
 
 import { MarkerInfoService } from './plain-map/marker-info.service';
+import { GoogleMapsService } from './google-maps.service';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
@@ -33,7 +34,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
       apiKey: 'AIzaSyB4CY_D2ih25haOs7HiSj_i6vVBtIUQf_Y'
     })
   ],
-  providers: [MarkerInfoService],
+  providers: [MarkerInfoService, GoogleMapsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
