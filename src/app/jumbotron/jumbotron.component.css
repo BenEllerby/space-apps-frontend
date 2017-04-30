@@ -1,0 +1,22 @@
+.jumbotron {
+    background-image:url(https://images4.alphacoders.com/430/thumb-1920-43056.jpg);
+    background-size: 50%;
+
+
+}
+
+h1 {
+ color: #FFF;
+ position:relative;
+}
+p {
+color: #FFF;
+}
+
+.container{
+    background-color: #101010;
+        -webkit-filter: brightness(80%);
+        opacity:0.8;
+    
+    
+}
