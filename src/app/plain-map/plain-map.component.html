@@ -6,7 +6,7 @@
     <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]=10>
       <sebm-google-map-marker *ngFor="let item of jsonData; let i = index" [latitude]="item.latitude" [longitude]="item.longitude">
         <sebm-google-map-info-window [disableAutoPan]="true">
-          Placeholder - will contain images<!--<img [src]="item.markerPicURL">-->
+          <img src="http://cdn.images.express.co.uk/img/dynamic/128/590x/red-squirrels-uk-danger-save-771056.jpg" id="squirrel">
         </sebm-google-map-info-window>
       </sebm-google-map-marker>
     </sebm-google-map>

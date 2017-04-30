@@ -19,3 +19,8 @@
 .panel{
  border:none;
 }
+
+#squirrel {
+    height: 300px;
+    width: 550px;
+}
