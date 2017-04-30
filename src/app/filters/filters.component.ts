@@ -16,15 +16,7 @@ export class FiltersComponent implements OnInit {
 
   checkedChange(name: string) {
     console.log("Hit checkedChange");
-    let temp = (<HTMLInputElement>document.getElementById(name)).checked;
-    if (temp)
-    {
-      this.graphFilter.emit(name);
-    }
-    else
-    {
-      this.graphFilter.emit("all");
-    }
+    this.graphFilter.emit(name);
   }
 }
 

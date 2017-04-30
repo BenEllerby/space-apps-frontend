@@ -9,11 +9,12 @@ import { GoogleMapsService } from './google-maps.service';
 })
 export class AppComponent {
 
-  @Output() animals = [{name: 'Bear'}, {name: 'Dog'}, {name: 'fox'}];
+  @Output() animals = [];
   @Output() lat = 53.6693533;
   @Output() lng = -1.3089677;
   @Output() jsonData;
   allData: any;
+  selected: string[] = [];
 
   constructor(private googleMapsService: GoogleMapsService, private markerinfoService: MarkerInfoService){};
 
@@ -23,6 +24,22 @@ export class AppComponent {
     resolvedData.then((data: any) => {
       this.allData = JSON.parse(data._body);
       this.jsonData = this.allData;
+      for(var i = 0; i < this.jsonData.length; i++){
+        //if(this.animals.indexOf(this.jsonData[i].name) === -1){
+          var containsFlag = false;
+          for(var j = 0; j < this.animals.length; j++){
+            if(this.jsonData[i].name === this.animals[j].name)
+              containsFlag = true;
+          }
+          if (!containsFlag) {
+            let jsonObj = {name: this.jsonData[i].name};
+            this.animals.push(jsonObj);
+          }
+      }
+
+      for(var i = 0; i < this.animals.length; i++){
+        this.selected.push(this.animals[i].name);
+      }
     });
   }
 
@@ -41,14 +58,21 @@ export class AppComponent {
 
   handleFilterEvent(event) {
     console.log("Hit handleFilterEvent");
-    if (event === "all"){
-      this.jsonData = this.allData;
+    console.log(this.allData);
+
+    let eventIndex = this.selected.indexOf(event);
+    if (eventIndex === -1) {
+      this.selected.push(event);
+    } else {
+      this.selected.splice(eventIndex, 1);
+    }
+
+    if (this.selected.length === 0) {
+      this.jsonData = [];
     } else {
       this.jsonData = [];
-      var j = 0;
-      console.log(this.allData);
       for(var i = 0; i < this.allData.length; i++) {
-        if(this.allData[i].name === event) {
+        if(this.selected.indexOf(this.allData[i].name) > -1) {
           this.jsonData.push(this.allData[i]);
         }
       }

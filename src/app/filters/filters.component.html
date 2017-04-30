@@ -6,7 +6,7 @@
   <div *ngFor="let animal of animals">
 	  <div class="col-lg-6">
 	    <div class="input-group">
-	      <input id="{{animal.name}}" type="checkbox" (change)="checkedChange(animal.name)" aria-label="..." >
+	      <input id="{{animal.name}}" type="checkbox" (change)="checkedChange(animal.name)" aria-label="..." checked="true">
 	      {{animal.name}}
 	    </div>
 	  </div>
