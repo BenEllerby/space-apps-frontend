@@ -1,19 +1,17 @@
 
 .panel-heading{
-    display:none;
-    background-color:#000;
-   /* #202020;*/
+    background-color:#202020;
     background-image: none;
      border:none;
 }
 .panel-title{
-    /*color:#F0F0F0;*/
-    color:#000;
+    color:#F0F0F0;
+    /*color:#000;*/
 }
 
 .panel-body{
-      background-color:#000;
-      color:#F0F0F0;
+      background-color:#E0E0E0;
+      color:#101010;
 }
 
 .panel{
