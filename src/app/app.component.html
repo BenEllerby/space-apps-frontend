@@ -4,9 +4,9 @@
 
 	<app-search (showOtherGraphs)="handleSearchEvent($event)"> </app-search>
 
-	<app-filters [animals]="animals"> </app-filters>
+	<app-filters (graphFilter)="handleFilterEvent($event)" [animals]="animals"> </app-filters>
 
-	<app-plain-map [lat]="lat" [lng]="lng"> </app-plain-map>
+	<app-plain-map [lat]="lat" [lng]="lng" [jsonData]="jsonData"> </app-plain-map>
 
 	<app-deforestation-map> </app-deforestation-map>
 

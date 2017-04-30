@@ -1,4 +1,5 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, OnInit } from '@angular/core';
+import { MarkerInfoService } from './plain-map/marker-info.service';
 import { GoogleMapsService } from './google-maps.service';
 
 @Component({
@@ -8,11 +9,22 @@ import { GoogleMapsService } from './google-maps.service';
 })
 export class AppComponent {
 
-  @Output() animals = [{name: 'grey squirrel'}, {name: 'fox'}];
-  //@Output() location = {lat: 53.6693533, lng: -1.3089677}
+  @Output() animals = [{name: 'Bear'}, {name: 'Dog'}, {name: 'fox'}];
   @Output() lat = 53.6693533;
   @Output() lng = -1.3089677;
-  constructor(private googleMapsService: GoogleMapsService){};
+  @Output() jsonData;
+  allData: any;
+
+  constructor(private googleMapsService: GoogleMapsService, private markerinfoService: MarkerInfoService){};
+
+  ngOnInit() {
+    let mockResponse = this.markerinfoService.getData();
+    let resolvedData = Promise.resolve(mockResponse);
+    resolvedData.then((data: any) => {
+      this.allData = JSON.parse(data._body);
+      this.jsonData = this.allData;
+    });
+  }
 
   handleSearchEvent(event) {
   	// call service
@@ -24,7 +36,22 @@ export class AppComponent {
         console.log(data);
         this.lat = data.lat;
         this.lng = data.lng;
-        // How to get this into plain-map.component?
     });
+  }
+
+  handleFilterEvent(event) {
+    console.log("Hit handleFilterEvent");
+    if (event === "all"){
+      this.jsonData = this.allData;
+    } else {
+      this.jsonData = [];
+      var j = 0;
+      console.log(this.allData);
+      for(var i = 0; i < this.allData.length; i++) {
+        if(this.allData[i].name === event) {
+          this.jsonData.push(this.allData[i]);
+        }
+      }
+    }
   }
 }
