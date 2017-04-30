@@ -9,11 +9,12 @@ import { GoogleMapsService } from './google-maps.service';
 })
 export class AppComponent {
 
-  @Output() animals = [{name: 'Bear'}, {name: 'Dog'}, {name: 'fox'}];
+  @Output() animals = [{name: 'bear'}, {name: 'squirrel'}, {name: 'fox'}];
   @Output() lat = 53.6693533;
   @Output() lng = -1.3089677;
   @Output() jsonData;
   allData: any;
+  selected: string[] = ['bear', 'squirrel', 'fox'];
 
   constructor(private googleMapsService: GoogleMapsService, private markerinfoService: MarkerInfoService){};
 
@@ -41,14 +42,22 @@ export class AppComponent {
 
   handleFilterEvent(event) {
     console.log("Hit handleFilterEvent");
-    if (event === "all"){
-      this.jsonData = this.allData;
+    console.log(this.allData);
+
+    let eventIndex = this.selected.indexOf(event);
+    if (eventIndex === -1) {
+      this.selected.push(event);
+    } else {
+      this.selected.splice(eventIndex, 1);
+    }
+
+    if (this.selected.length === 0) {
+      this.jsonData = [];
     } else {
       this.jsonData = [];
-      var j = 0;
-      console.log(this.allData);
       for(var i = 0; i < this.allData.length; i++) {
-        if(this.allData[i].name === event) {
+        console.log(this.allData[i]);
+        if(this.selected.indexOf(this.allData[i].name) > -1) {
           this.jsonData.push(this.allData[i]);
         }
       }
